@@ -1,23 +1,22 @@
 #include<stdio.h>
-int main(){
+int main() {
     int n;
+    printf("Enter array size:");
     scanf("%d",&n);
     int arr[n];
+    printf("Enter array elements:");
     for(int i=0;i<n;i++){
-        scanf("%d",&arr[i]);}
-    for(int i=0;i<n;i++){
-        for(int j=i+1;j<n;j++){
-            if (arr[i]==arr[j]){
-                for(int k=j;k<n-1;k++){
-                    arr[k]=arr[k+1];
-                }
-                n--;
-                j--;
-            }
-        }
+        scanf("%d",&arr[i]) ;
     }
-    for(int i=0;i<n;i++){
-    printf("%d",arr[i]);
-    }
-return 0;
-    }
+int sum=0;
+int *ptr=arr;
+for(int i=0;i<n;i++){
+    sum+=*ptr;
+    ptr++;
+}
+float avg=sum/n;
+printf("Sum of array elements :%d",sum);
+printf("Average of array elements: %d",avg);
+    return 0;
+}
+
